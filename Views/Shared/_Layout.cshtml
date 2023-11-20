@@ -1,0 +1,131 @@
+﻿@using AccesoWindows.Component
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>@ViewData["Title"] - AccesoWindows</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/iconosMenu.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AccesoWindows.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Paginas.css" asp-append-version="true" />
+
+    <!--Font aweson para traer los iconos-->
+    <script src="https://kit.fontawesome.com/e0dfd98645.js" crossorigin="anonymous"></script>
+    <!--Menu verticar (mostrar ocultar)-->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</head>
+<body>
+
+    <!--Menu de iconos-->
+    <div class="conte-ico content">
+        <a asp-area="" asp-controller="Menu" asp-action="Menu" title="Incono 1"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 2"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 3"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 4"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 5"><i class="fa-solid fa-lock"></i></a>
+    </div>
+    <div class="conte-ico content">
+        <a asp-area="" asp-controller="" asp-action="" title="Guardar"><i class="fa-solid fa-floppy-disk"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 7"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 8"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 9"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 10"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 11"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 12"><i class="fa-solid fa-lock"></i></a>
+        <a asp-area="" asp-controller="" asp-action="" title="Incono 13"><i class="fa-solid fa-lock"></i></a>
+    </div>
+
+    <!--Boton de ocultar mostrar-->
+    <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!--Cuerpo del menu-->
+    <div class="side-bar">
+
+        <header>
+            <div class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <!--<img src=”image.jpg” alt=””>-->
+            
+        </header>
+
+
+        <!--Menu desplegable-->
+        <div class="menu">
+            <span>Hola, @User.Identity?.Name</span>
+            <div class="item"><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i>Inicio</a></div>
+
+            <div class="item">
+                <a class="sub-btn"><i class="fa-solid fa-code"></i>Tablas<i class="fa-solid fa-chevron-down dropdown"></i></a>
+                <div class="sub-menu">
+
+                    <a class="sub-item">Sub Item 01<i class="fa-solid fa-chevron-down dropdown"></i></a>
+                        <div class="sub-menu-item">
+                            <a class="sub-item" asp-area="" asp-controller="Home" asp-action="NestedAction1">Nested Sub Item 01</a>
+                            <a class="sub-item" asp-area="" asp-controller="Home" asp-action="NestedAction2">Nested Sub Item 02</a>
+                        </div>
+
+
+                    <a class="sub-item">Sub Item 02<i class="fa-solid fa-chevron-down dropdown"></i></a>
+                        <div class="sub-menu-item">
+                            <a class="sub-item" asp-area="" asp-controller="Home" asp-action="NestedAction3">Nested Sub Item 03</a>
+                            <a class="sub-item" asp-area="" asp-controller="Home" asp-action="NestedAction4">Nested Sub Item 04</a>
+                        </div>
+
+
+                    <a class="sub-item">Sub Item 03<i class="fa-solid fa-chevron-down dropdown"></i></a>
+                        <div class="sub-menu-item">
+                            <a class="sub-item" asp-area="" asp-controller="Home" asp-action="NestedAction5">Nested Sub Item 05</a>
+                            <a class="sub-item" asp-area="" asp-controller="Home" asp-action="NestedAction6">Nested Sub Item 06</a>
+                        </div>
+                    
+                </div>
+            </div>
+
+            <!--Opciones de menu-->
+            <div class="item">
+                <a class="sub-btn"><i class="fa-solid fa-code"></i>Menu<i class="fa-solid fa-chevron-down dropdown"></i></a>
+                <div class="sub-menu">
+                    @await Component.InvokeAsync(typeof(MenuViewComponent))
+                </div>
+            </div>
+
+            <div class="item">
+                <a class="sub-btn"><i class="fa-solid fa-code"></i>Ajustes<i class="fa-solid fa-chevron-down dropdown"></i></a>
+                <div class="sub-menu">
+                    <a class="sub-item" asp-area="" asp-controller="Home" asp-action="Privacy">Sub Item 01</a>
+                    <a class="sub-item" asp-area="" asp-controller="Home" asp-action="Index">Sub Item 02</a>
+                </div>
+            </div>
+
+            <div class="item"><a asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-code"></i>Sobre</a></div>
+        </div>
+
+    </div>
+
+    <div class="container content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+@*    <footer class="border-top footer text-muted content fixed-bottom bg-light">
+        <div class="container">
+            &copy; 2023 - Oreplast
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--Jquery para hacer el acordion-->
+    <script src="~/js/acordionMenu.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="~/js/site.js" asp-append-version="true"></script>-->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿.conte-ico {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 5vh;
+}
+
+    .conte-ico a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        width: 20%;
+        text-align: center;
+        display: block;
+        padding: 8px 0;
+        background-color: #40739e;
+        transition: all .5s ease-in-out;
+    }
+
+    .conte-ico a:hover{
+        opacity: .7;
+    }
+
+
+@media (max-width: 1039px) {
+    .conte-ico {
+        height: 3.7vh;  
+    }
+
+}

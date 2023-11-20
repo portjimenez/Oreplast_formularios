@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Formulario";
+}
+@model AccesoWindows.Models.ListaViewModel
+<link rel="stylesheet" href="~/css/Formulario.css" asp-append-version="true" />
+
+<div class="ajuste container">
+    <div class="row">
+        <!-- Columna izquierda para la tabla -->
+        <div class="col-md-6">
+            <table id="tablaDatos" class="table">
+                <thead>
+                    <tr>
+                        <th>Id Rol</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var elemento in Model.rol)
+                    {
+                        <tr class="fila-datos" data-id="@elemento.Value">
+                            <td>@elemento.Value</td>
+                            <td>@elemento.Text</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Columna derecha para el formulario -->
+        <div class="col-md-6">
+            <div class="ajuste contacto">
+                <form id="formulario" class="form" asp-action="" method="post">
+                    <div class="form-group p-3">
+                        <label>Id Rol</label>
+                        <input id="idRol" class="tamano" asp-for="datos.id_rol" class="form-control" />
+
+                        <label>Descripcion</label>
+                        <input id="descripcion" class="tamano" asp-for="datos.descripcion" class="form-control" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Agregar un evento de clic a las filas de la tabla
+    var filas = document.getElementsByClassName('fila-datos');
+
+    if (filas.length > 0) {
+        filas[0].classList.add('fila-seleccionada');
+    }
+
+    for (var i = 0; i < filas.length; i++) {
+        filas[i].addEventListener('click', function () {
+            for (var j = 0; j < filas.length; j++) {
+                filas[j].classList.remove('fila-seleccionada');
+            }
+
+            // Obtener el id de la fila clicada
+            var idRol = this.getAttribute('data-id');
+            var descripcion = this.cells[1].innerText;
+
+            // Actualizar el formulario con los datos correspondientes
+            document.getElementById('idRol').value = idRol;
+
+            // Puedes agregar aquí la lógica para cargar otros datos en el formulario si es necesario
+            document.getElementById('descripcion').value = descripcion;
+
+            // Agregar la clase de fila seleccionada a la fila clicada
+            this.classList.add('fila-seleccionada');
+            // Obtener el id de la fila clicada
+            var idRol = this.getAttribute('data-id');
+            var descripcion = this.cells[1].innerText;
+
+            // Actualizar el formulario con los datos correspondientes
+            document.getElementById('idRol').value = idRol;
+
+            // Puedes agregar aquí la lógica para cargar otros datos en el formulario si es necesario
+            document.getElementById('descripcion').value = descripcion;
+        });
+    }
+</script>

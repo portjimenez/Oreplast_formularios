@@ -1,0 +1,12 @@
+﻿@model List<MenuModel>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Lista";
+}
+
+<div class="ajuste">
+    @foreach (var item in Model)
+    {
+        <p>@item.Formulario</p>
+    }
+</div>

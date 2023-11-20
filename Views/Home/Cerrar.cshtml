@@ -1,0 +1,13 @@
+﻿@{
+    Layout = null;
+}
+
+<h1>Su sesion se ha cerrado, para completar este proceso cierre su navegador</h1>
+<!--Para bloquear el boton de retroceder del navegador-->
+<script>
+    history.pushState(null, null, location.href);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, location.href);
+        location.reload(true);
+    });
+</script>

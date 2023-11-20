@@ -1,0 +1,28 @@
+﻿@model List<MenuModel>
+@using AccesoWindows.Component
+@using System.Text.RegularExpressions;
+
+@{
+    var orderedModel = Model.OrderBy(item => item.Jerarquia);
+}
+
+
+@foreach (var item in orderedModel.Where(item => item.Nivel == 0))
+{
+    <a class="sub-item">@item.Texto<i class="fa-solid fa-chevron-down dropdown"></i></a>
+
+    // Filtrar subelementos relacionados con el elemento actual
+    var subItems = orderedModel
+        .Where(subItem => subItem.Nivel > 0 && subItem.Jerarquia.StartsWith(item.Jerarquia))
+        .ToList();
+
+    if (subItems.Any())
+    {
+        <div class="sub-menu-item">
+            @foreach (var subItem in subItems)
+            {
+                <a class="sub-item" asp-area="" asp-controller="Formularios" asp-action="FormularioRol">@subItem.Texto</a>
+            }
+        </div>
+    }
+}

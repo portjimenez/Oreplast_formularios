@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: white;
+    color: black;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+ /*Boton para el ocultar y mostrar menu*/
+
+.menu-btn {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    margin: 25px;
+    cursor: pointer;
+ 
+}
+
+/*Cuerpo del menu*/
+
+.side-bar {
+    background: #1b1a1b;
+    backdrop-filter: blur(15px);
+    width: 329px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -330px;
+    overflow-y: auto;
+    transition: 0.6s ease;
+    transition-property: left;
+}
+
+    .side-bar::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .side-bar.active {
+        left: 0;
+    }
+
+    /*header para imagen y boton de cerrar*/
+
+header {
+    background: #33363a;
+}
+
+header img {
+    width: 100px;
+    margin: 15px;
+    border-radius: 50%;
+    margin-left: 70px;
+    border: 3px solid #b4b8b9;
+}
+
+    .menu span {
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-weight: 100;
+        font-size: 19px;
+        padding-bottom: 20px;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+    }
+
+.close-btn {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    right: 0px;
+    margin: 13px;
+    cursor: pointer;
+}
+
+/*Dar estilos al menu con los items*/
+
+.side-bar .menu {
+    width: 100%;
+    margin-top: 30px;
+}
+
+    .side-bar .menu .item {
+        position: relative;
+        cursor: pointer;
+    }
+
+        .side-bar .menu .item a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            padding: 5px 30px;
+            line-height: 60px;
+        }
+/*hover para los items*/
+
+.side-bar .menu .item a:hover {
+     background: #33363a;
+     transition: 0.3s ease;
+}
+
+.side-bar .menu .item i {
+    margin-right: 15px;
+}
+
+/*diseño de acordion*/
+
+.side-bar .menu .item a .dropdown{
+     position: absolute;
+     right: 0;
+     margin: 20px;
+     transition: 0.3s ease;
+}
+.side-bar .menu .item .sub-menu{
+     background: #262627;
+     display: none;
+}
+
+.sub-menu-item {
+    background: #262627;
+    display: none;
+}
+
+.side-bar .menu .item .sub-menu a {
+    padding-left: 80px;
+}
+
+.side-bar .menu .item .sub-menu .sub-menu-item a {
+    padding-left: 95px;
+}
+/*rotar el icono de despliegue*/
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+/*correr contenido*/
+
+.content {
+    transition: margin-left 0.6s ease;
+}
+
+.content-active {
+    margin-left: 330px; /* Ajusta este valor según el ancho de tu barra lateral */
+}
+
+
+.text-posicion {
+    text-align: center;
+}
+
+
+@media (max-width: 817px) {
+    .side-bar {
+        width: 230px;
+        left: -230px;
+    }
+
+    .content-active {
+        margin-left: 230px; 
+    }
+
+    .text-posicion {
+        text-align: left;
+    }
+}
