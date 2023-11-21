@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>@ViewData["Title"] - AccesoWindows</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/iconosMenu.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AccesoWindows.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Paginas.css" asp-append-version="true" />
+    <!--Formulario-->
+    <link rel="stylesheet" href="~/css/Formulario.css" asp-append-version="true" />
 
     <!--Font aweson para traer los iconos-->
     <script src="https://kit.fontawesome.com/e0dfd98645.js" crossorigin="anonymous"></script>
     <!--Menu verticar (mostrar ocultar)-->
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
 
 </head>
 <body>
@@ -120,10 +125,15 @@
             &copy; 2023 - Oreplast
         </div>
     </footer>*@
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <!--Jquery para hacer el acordion-->
     <script src="~/js/acordionMenu.js" asp-append-version="true"></script>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!--Java script para que se cargue la paginacion y seleccion-->
+    <script src="~/js/PaginacionSeleccion.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!--<script src="~/js/site.js" asp-append-version="true"></script>-->
     @await RenderSectionAsync("Scripts", required: false)
