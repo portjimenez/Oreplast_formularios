@@ -1,8 +1,4 @@
-﻿$(document).ready(function () {
-    $('#table_id').DataTable();
-});
-
-// Agregar un evento de clic a las filas de la tabla
+﻿// Agregar un evento de clic a las filas de la tabla
 var filas = document.getElementsByClassName('fila-datos');
 
 if (filas.length > 0) {
