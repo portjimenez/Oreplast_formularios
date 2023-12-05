@@ -21,7 +21,10 @@ public class FormulariosController : Controller
             {
                 Value = c.id_rol.ToString(),
                 Text = c.descripcion
-            }).ToList()
+            }).ToList(),
+
+            //con esto llamamos todos los campos de la tabla
+            Propiedades = typeof(FrmRolModel).GetProperties().ToList()
         };
 
         return View(lista);

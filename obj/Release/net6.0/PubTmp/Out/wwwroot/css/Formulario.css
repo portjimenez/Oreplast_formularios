@@ -29,8 +29,58 @@
 .fila-seleccionada {
     background-color: #e0e0e0; 
 }
+
+/*Creo la cajitas con scrol*/
+.caja-tabla {
+    max-width: 560px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.caja-form-FK {
+    max-width: 600px;
+    max-height: 500px;
+    overflow: auto;
+}
+
 @media (max-width: 768px) {
     .tamano{
        width: 300px;
     }
 }
+
+
+/*-----------------------------*/
+.segundoFormulario {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.nav-bar {
+    position: relative; /* Hacer que la posición del pseudo-elemento sea relativa a este div */
+    white-space: nowrap; /* Evitar el salto de línea */
+}
+.nav-bar::after {
+    content: ''; /* Contenido del pseudo-elemento */
+    display: block; /* Hacer que el pseudo-elemento sea un bloque */
+    height: 1px; /* Altura del borde */
+    background-color: #333; /* Color del borde */
+    position: absolute; /* Posicionamiento absoluto con respecto al .nav-bar */
+    left: 0; /* Alinear con el borde izquierdo */
+    right: 0; /* Alinear con el borde derecho */
+    bottom: 0; /* Alinear con el borde inferior */
+}
+.nav-bar a {
+    display: inline-block;
+    color: #333;
+    text-align: center;
+    padding: 1px 16px;
+    text-decoration: none;
+}
+.nav-bar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/*Ocultar los divs*/

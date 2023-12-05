@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KFSHdE6ta5h4LEQ7WTblxb1oCG17yiNsIUqqFlU4BZI=",
+  "Hash": "9wsv6tKuT/ARhUzGhUS2IypSRm9ERYvCtn9EAMosviA=",
   "Source": "AccesoWindows",
   "BasePath": "_content/AccesoWindows",
   "Mode": "Default",
@@ -151,6 +151,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\acordionMenu.js"
+    },
+    {
+      "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Paginacion.js",
+      "SourceId": "AccesoWindows",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\Manasés\\AccesoWindows\\wwwroot\\",
+      "BasePath": "_content/AccesoWindows",
+      "RelativePath": "js/Paginacion.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Paginacion.js"
+    },
+    {
+      "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Seleccion.js",
+      "SourceId": "AccesoWindows",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\Manasés\\AccesoWindows\\wwwroot\\",
+      "BasePath": "_content/AccesoWindows",
+      "RelativePath": "js/Seleccion.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Seleccion.js"
     },
     {
       "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\site.js",

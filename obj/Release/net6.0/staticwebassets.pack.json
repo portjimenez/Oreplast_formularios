@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Paginacion.js",
+      "PackagePath": "staticwebassets\\js\\Paginacion.js"
+    },
+    {
+      "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Seleccion.js",
+      "PackagePath": "staticwebassets\\js\\Seleccion.js"
+    },
+    {
       "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\acordionMenu.js",
       "PackagePath": "staticwebassets\\js\\acordionMenu.js"
     },

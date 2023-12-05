@@ -2,7 +2,6 @@
     Layout = "_Layout";
     ViewData["Title"] = "Formulario";
 }
-
 @model AccesoWindows.Models.ListaViewModel
 
 
@@ -10,38 +9,89 @@
     <div class="row">
         <!-- Columna izquierda para la tabla -->
         <div class="col-md-6 card-body">
-            <table id="table_id" class="table">
-                <thead>
-                    <tr>
-                        <th>Id Rol</th>
-                        <th>Descripción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var elemento in Model.rol)
-                    {
-                        <tr class="fila-datos" data-id="@elemento.Value">
-                            <td>@elemento.Value</td>
-                            <td>@elemento.Text</td>
+            <div class="tabla-container caja-tabla">
+                <table id="table_id" class="table">
+                    <thead>
+                        <tr>
+                            <th>Id Rol</th>
+                            <th>Descripción</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var elemento in Model.rol)
+                        {
+                            <tr class="fila-datos" data-id="@elemento.Value">
+                                <td>@elemento.Value</td>
+                                <td>@elemento.Text</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Columna derecha para el formulario -->
         <div class="col-md-6">
             <div class="ajuste contacto">
                 <form id="formulario" class="form" asp-action="" method="post">
-                    <div class="form-group p-3">
-                        <label>Id Rol</label>
-                        <input id="idRol" class="tamano" asp-for="datos.id_rol" class="form-control" />
+                    <div class="form-group p-3 fila-seleccionada">
+                        @foreach (var propiedad in Model.Propiedades.Where(p => p.PropertyType.IsPrimitive ||
+                        p.PropertyType == typeof(string) ||
+                        (p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) && p.PropertyType.GetGenericArguments()[0] == typeof(int))))
+                        {
+                            var value = Model.datos != null ? propiedad.GetValue(Model.datos, null) : null;
 
-                        <label>Descripcion</label>
-                        <input id="descripcion" class="tamano" asp-for="datos.descripcion" class="form-control" />
+                            <label>@propiedad.Name</label>
+                            <input id="@propiedad.Name" class="form-control tamano" value="@value" />
+                        }
                     </div>
                 </form>
+            </div>
+
+            <!-- Columna derecha abajo tablas -->
+            <div class="ajuste contacto caja-form-FK">
+                <div class="nav-bar">
+                    <a href="#usuarioRoles" onclick="VerDivRoles()">Usuario roles</a>
+                    <a href="#menuRoles" onclick="VerDivMenu()">Menu de roles</a>
+                </div>
+
+                <div id="visualizarRoles" class="segundoFormulario p-3" style="display: block;">
+                    <form action="" method="post">
+                        Fecha de creacion: <input id="" type="date"/>
+                    </form>
+                </div>
+
+                <div id="visualizarMenu" class="segundoFormulario p-3" style="display: none;">
+                    <form action="" method="post">
+                        <button>Consultar</button>
+                        <button>Agregar</button>
+                        <button>Modificar</button>
+                        <button>Eliminar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function VerDivRoles(){
+        var d = document.getElementById("visualizarRoles")
+        if(d.style.display == "block"){
+            d.style.display = "none";
+            document.getElementById("visualizarMenu").style.display = "none";
+        }else{
+            d.style.display = "block";
+            document.getElementById("visualizarMenu").style.display = "none";
+        }
+    }
+    function VerDivMenu() {
+        var d = document.getElementById("visualizarMenu")
+        if (d.style.display == "none") {
+            d.style.display = "block";
+            document.getElementById("visualizarRoles").style.display = "none";
+        } else {
+            d.style.display = "none";
+            document.getElementById("visualizarRoles").style.display = "none";
+        }
+    }
+</script>
