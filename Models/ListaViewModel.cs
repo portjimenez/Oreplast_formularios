@@ -12,5 +12,8 @@ namespace AccesoWindows.Models
 
         // se integra la lista de propiedades que deseo mostrar en el formulario
         public List<PropertyInfo>? Propiedades { get; set; }
+
+        //listado de nombres de columnas
+        public List<string>? Columnas { get; set; }
     }
 }

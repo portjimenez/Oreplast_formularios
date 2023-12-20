@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3Iqdmck+T/BTt/FrNgL9Csv+UnG71dk85cqoy2g30N4=",
+  "Hash": "aXe7Ipz6LicvwPjxDHNAqoL/0pM+YLkYWWmFhLnwshA=",
   "Source": "AccesoWindows",
   "BasePath": "_content/AccesoWindows",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\acordionMenu.js"
+    },
+    {
+      "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Alertas_Actualizacion.js",
+      "SourceId": "AccesoWindows",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\Manasés\\AccesoWindows\\wwwroot\\",
+      "BasePath": "_content/AccesoWindows",
+      "RelativePath": "js/Alertas_Actualizacion.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Alertas_Actualizacion.js"
     },
     {
       "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Paginacion.js",

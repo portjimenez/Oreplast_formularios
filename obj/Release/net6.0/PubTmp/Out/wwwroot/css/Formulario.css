@@ -49,6 +49,11 @@
     }
 }
 
+/*Pinta la fila seleccionada*/
+.row-selected {
+    background-color: #3498db !important; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+}
 
 /*-----------------------------*/
 .segundoFormulario {
@@ -84,3 +89,10 @@
 }
 
 /*Ocultar los divs*/
+
+
+
+/*eeesssttttfff  sssdddsss jjjsllll lssssllsslllsslls uurrrr rrrriissssop sssa aaadd dddjjja
+    aaaaaaaaaallii  iddddd ooosiid dkdkdkdddd ddjjooo ssssññs kkkdddsñ ddjdjdjd daassdddllpdd  pero es una gran 
+    lata de como es esto alch jajjajaaj si p7es con razon
+*/

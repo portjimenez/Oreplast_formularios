@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c43AhDKDmLSNEv2fDAsE/FOT1ZiXWxI5kaCzjtSCYc4=",
+  "Hash": "2YmyfAQvoZ/Z/ADEAxpR7TMTengLUF2jmkHsPIG8Y8k=",
   "Source": "AccesoWindows",
   "BasePath": "_content/AccesoWindows",
   "Mode": "Default",
@@ -153,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\js\\acordionMenu.js"
     },
     {
+      "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Alertas_Actualizacion.js",
+      "SourceId": "AccesoWindows",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\Manasés\\AccesoWindows\\wwwroot\\",
+      "BasePath": "_content/AccesoWindows",
+      "RelativePath": "js/Alertas_Actualizacion.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Alertas_Actualizacion.js"
+    },
+    {
       "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Paginacion.js",
       "SourceId": "AccesoWindows",
       "SourceType": "Discovered",
@@ -202,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\subFormularios.js",
+      "SourceId": "AccesoWindows",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\Manasés\\AccesoWindows\\wwwroot\\",
+      "BasePath": "_content/AccesoWindows",
+      "RelativePath": "js/subFormularios.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\subFormularios.js"
     },
     {
       "Identity": "Z:\\Manasés\\AccesoWindows\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

@@ -1,49 +1,39 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
-    var filas = document.querySelectorAll('.fila-datos');
+﻿$(document).ready(function () {
+    // Función para manejar el evento click en las filas de datos
+    function manejarClick() {
+        var $fila = $(this);
 
-    if (filas.length > 0) {
-        filas[0].classList.add('fila-seleccionada');
-    }
+        // Remover la clase de todas las filas
+        $('.fila-datos').removeClass('row-selected');
 
-    for (var i = 0; i < filas.length; i++) {
-        filas[i].addEventListener('click', function () {
-            for (var j = 0; j < filas.length; j++) {
-                filas[j].classList.remove('fila-seleccionada');
+        // Agregar la clase solo a la fila clicada
+        $fila.addClass('row-selected');
+
+        // Resto del código
+        $fila.find('td').each(function (index) {
+            var propiedadName = $('#table_id th').eq(index).text().trim();
+            var $input = $('#formulario').find('[id="' + propiedadName + '"]');
+
+            console.log(propiedadName);
+
+            if ($input.length >= 0) {
+                var value = $(this).text();
+                console.log(value);
+                $input.val(value);
             }
-
-            // Obtener los datos de la fila clicada
-            var datosFila = obtenerDatosFila(this);
-
-            // Actualizar dinámicamente los campos del formulario con ID dinámico
-            var camposFormulario = document.querySelectorAll('.tamano');
-
-            for (var k = 0; k < camposFormulario.length; k++) {
-                var idCampoFormulario = camposFormulario[k].id;
-                var valorCampo = datosFila[idCampoFormulario] || '';
-
-                document.getElementById(idCampoFormulario).value = valorCampo;
-            }
-
-            // Agregar la clase de fila seleccionada a la fila clicada
-            this.classList.add('fila-seleccionada');
         });
+
     }
 
-    function obtenerDatosFila(fila) {
-        var datos = {};
-        var celdas = fila.getElementsByTagName('td');
+    // Vincular el evento click inicial
+    $('body').on('click', '.fila-datos', manejarClick);
 
-        for (var l = 0; l < celdas.length; l++) {
-            var nombreCampo = obtenerTextoCelda(celdas[l]);
-            var valorCampo = obtenerTextoCelda(celdas[l + 1]);
-            datos[nombreCampo] = valorCampo;
-            l++;
-        }
+    // Vincular el evento draw.dt para manejar las actualizaciones de la tabla
+    $('#table_id').on('draw.dt', function () {
+        // Desvincular y volver a vincular el evento click después de que la tabla se haya redibujado
+        $('body').off('click', '.fila-datos').on('click', '.fila-datos', manejarClick);
 
-        return datos;
-    }
-
-    function obtenerTextoCelda(celda) {
-        return celda ? celda.innerText.trim().toLowerCase() : '';
-    }
+        // Eliminar estilos de selección en todas las filas
+        $('.fila-datos').removeClass('row-selected');
+    });
 });

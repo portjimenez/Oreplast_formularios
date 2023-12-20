@@ -5,7 +5,7 @@
 @{
     var orderedModel = Model.OrderBy(item => item.Jerarquia);
 }
-
+  
 
 @foreach (var item in orderedModel.Where(item => item.Nivel == 0))
 {
@@ -21,7 +21,18 @@
         <div class="sub-menu-item">
             @foreach (var subItem in subItems)
             {
-                <a class="sub-item" asp-area="" asp-controller="Formularios" asp-action="FormularioRol">@subItem.Texto</a>
+                if (subItem.Opcion == 10000)
+                {
+                    <a class="sub-item" asp-area="" asp-controller="Formularios" asp-action="FormularioRol">@subItem.Texto</a>
+                }
+                else if (subItem.Opcion == 9999)
+                {
+                    <a class="sub-item" asp-area="" asp-controller="Home" asp-action="Cerrar">@subItem.Texto</a>
+                }
+                else if (subItem.Opcion != 9999 && subItem.Opcion != 10000)
+                {
+                    <a class="sub-item" asp-area="" asp-controller="Home" asp-action="Privacy">@subItem.Texto</a>
+                }
             }
         </div>
     }

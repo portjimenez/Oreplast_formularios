@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Alertas_Actualizacion.js",
+      "PackagePath": "staticwebassets\\js\\Alertas_Actualizacion.js"
+    },
+    {
       "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\Paginacion.js",
       "PackagePath": "staticwebassets\\js\\Paginacion.js"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\js\\subFormularios.js",
+      "PackagePath": "staticwebassets\\js\\subFormularios.js"
     },
     {
       "Id": "Z:\\Manasés\\AccesoWindows\\wwwroot\\lib\\bootstrap\\LICENSE",

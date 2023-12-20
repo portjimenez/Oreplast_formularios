@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     $('#table_id').DataTable({
+        "pageLength": 100,
         language: {
             "sLengthMenu": "Mostrar _MENU_ registros",
             "sEmptytable": "Ningun dato disponible en esta tabla ",
@@ -11,6 +12,7 @@
                 "sNext": "Siguiente",
                 "sPrevious":"Anterior"
             }
-        }
+        },
+        "bLengthChange": false //Oculta el menu sLengthMenu
     });
 });
